@@ -1,0 +1,32 @@
+﻿@page "/"
+@inject NavigationManager Navigation
+<MudPaper Class="d-flex flex-column" Style="height: 100vh; justify-content: space-between;">
+
+    <MudPaper Class="position-relative" Style="flex: 1; overflow: hidden;">
+        <img src="truck.png" alt="Camión" style="width: 100%; height: 100%; object-fit: cover;" />
+
+        <MudPaper Class="position-absolute" Style="bottom: 0; width: 100%; height: 100px; background: linear-gradient(0deg, rgba(44,62,80,1) 20%, rgba(44,62,80,0) 100%);">
+        </MudPaper>
+    </MudPaper>
+
+
+    <MudPaper Class="p-4 text-center mt-2">
+        <MudText Typo="Typo.h4" Class="mb-2 txt-bold">Monitorea tu Transporte</MudText>
+        <MudText Typo="Typo.body1">Monitorea tu transporte en todo momento y agiliza tus entregas</MudText>
+    </MudPaper>
+
+    <MudPaper Class="p-3">
+        <MudButton OnClick="NavigateToNextPage" Class="btn-sig" FullWidth Variant="Variant.Filled">
+             Siguiente
+         </MudButton>
+
+     </MudPaper>
+
+ </MudPaper>
+
+ @code {
+    private void NavigateToNextPage()
+    {
+        Navigation.NavigateTo("/login");
+    }
+}

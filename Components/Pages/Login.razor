@@ -1,0 +1,53 @@
+﻿@page "/login"
+@inject NavigationManager NavigationManager
+
+<MudPaper Class="d-flex flex-column" Style="height: 100vh; justify-content: space-between;">
+
+    <MudPaper Class="position-relative" Style="flex: 1; overflow: hidden;">
+        <img src="truck-login.png" alt="Camión" style="width: 100%; height: 100%; object-fit: cover;" />
+
+        <MudPaper Class="position-absolute" Style="bottom: 0; width: 100%; height: 300px; background: linear-gradient(0deg, rgba(44,62,80,1) 30%, rgba(21,38,53,0) 100%);">
+            <div class="login-txt-box">
+                <MudText Typo="Typo.subtitle1">Bienvenido</MudText>
+                <MudText Typo="Typo.h4" Class="txt-bold">Iniciar sesion en su cuenta</MudText>
+            </div>
+        </MudPaper>
+    </MudPaper>
+
+    <MudPaper Class="p-4">
+
+        <MudPaper Class="d-flex justify-content-end align-items-center mb-2" Elevation="0" Outlined="false">
+            <img src="Supra-Logo.png" alt="Ícono de usuario" style="width: 30px; height: 30px;">
+        </MudPaper>
+
+        <MudPaper Style="width: 100%; max-width: 100vw;" Elevation="0" Outlined="false">
+            <MudText Typo="Typo.body1">Teléfono</MudText>
+            <MudInput @bind-Value="telefono" Placeholder="Introduzca su número de teléfono" Type="InputType.Tel" Class="mb-2 w-100" FullWidth />
+
+             <MudText Typo="Typo.body1">Contraseña</MudText>
+             <MudInput @bind-Value="contrasena" Placeholder="Introduzca su contraseña" Type="InputType.Password" Class="mb-2 w-100" FullWidth />
+         </MudPaper>
+
+         <MudText Typo="Typo.body2" Align="Align.Right" Class="mb-4">
+             <MudLink Class="txt-bold" Href="#" Color="Color.Info">¿Olvidó su contraseña?</MudLink>
+         </MudText>
+
+
+         <MudPaper Class="p-2" Elevation="0" Outlined="false">
+             <MudButton OnClick="NavigateToMap" Class="btn-sig" FullWidth Variant="Variant.Filled">
+                 Iniciar Sesion
+             </MudButton>
+
+         </MudPaper>
+     </MudPaper>
+ </MudPaper>
+
+ @code {
+    private string telefono;
+    private string contrasena;
+
+    private void NavigateToMap()
+    {
+        NavigationManager.NavigateTo("/map");
+    }
+}
